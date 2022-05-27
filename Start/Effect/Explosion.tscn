@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fire_01.png" type="Texture" id=1]
+[ext_resource path="res://Effect/Explosion.gd" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.185294, 0.505882, 0.791176, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.528086, 0.0595341, 0, 1, 0.703916, 0.490142, 0.30508, 1, 0.672666, 0.672666, 0.672666, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 180.0
+angle_random = 1.0
+scale = 0.4
+scale_random = 0.1
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[node name="Explosion" type="Particles2D"]
+amount = 4
+lifetime = 0.1
+process_material = SubResource( 5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )

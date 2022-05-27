@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/towerDefense_tilesheet.png-0ef779eceb06b1d22a740572ed38f7fb.stex"
+
+[node name="Shadow" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 4 )
+region_enabled = true
+region_rect = Rect2( 1152, 768, 64, 64 )
